@@ -10,6 +10,7 @@ class PlanetsController < ApplicationController
   # GET /planets/1
   # GET /planets/1.json
   def show
+    @planet = Planet.find(params[:id])
   end
 
   # GET /planets/new

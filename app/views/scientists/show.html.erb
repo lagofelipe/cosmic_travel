@@ -1,0 +1,15 @@
+<h1>Scientist Details (show page) </h2><br>
+
+
+<h2>Scientist name: <%= @scientist.name %></h2>
+<h2>Scientist Specialty: <%= @scientist.field_of_study %></h2><br>
+
+
+<h2>Planets visited :</h2><br>
+
+
+<% @scientist.planets.each do |planet| %>
+<li><%= link_to planet.name, planet_path(planet) %></li>
+<% end %>
+
+

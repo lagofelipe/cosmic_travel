@@ -1,0 +1,14 @@
+<h1>Welcome to Scientists Index Page</h1><br>
+
+<h2>Please make your selection bellow</h2>
+
+
+<ul>
+
+
+<% @scientists.each do |scientist| %>
+<li><%= link_to scientist.name, scientist_path(scientist) %></li>
+<%end  %>
+
+</ul>
+
