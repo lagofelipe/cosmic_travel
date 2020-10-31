@@ -1,5 +1,5 @@
 class ScientistsController < ApplicationController
-
+    before_action :find_scientist, only: [:show, :edit, :update, :destroy]
 
 def index
  @scientists = Scientist.all

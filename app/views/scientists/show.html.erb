@@ -4,6 +4,14 @@
 <h2>Scientist name: <%= @scientist.name %></h2>
 <h2>Scientist Specialty: <%= @scientist.field_of_study %></h2><br>
 
+<%= button_to "Return to Index Page", scientists_path, method: :get  %><br>
+<%= button_to "Assign a new Mission", new_mission_path, method: :get  %><br>
+<%= button_to "Delete this Scientist", @scientist, method: :delete %><br>
+<%= button_to "Edit Scientist", edit_scientist_path(@scientist), method: :get %>
+
+
+
+
 
 <h2>Planets visited :</h2><br>
 
@@ -13,6 +21,4 @@
 <% end %>
 
 
-<br><%= button_to "Return to Index Page", scientists_path, method: :get  %>
-<br><%= button_to "Assign new Mission", new_mission_path, method: :get  %>
 
