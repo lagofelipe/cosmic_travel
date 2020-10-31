@@ -8,11 +8,15 @@ class MissionsController < ApplicationController
   @mission = Mission.find(params[:id]) 
  end
 
-def create
- @new_mission = Mission.create(mission_params)
+ def new
+ @mission = Mission.new
+ end
 
- redirect_to mission_path(@new_mission)
-end
+def create
+ @mission = Mission.create(mission_params)
+
+ redirect_to scientist_path(@mission.scientist)
+ end
 
 
 

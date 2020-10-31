@@ -1,5 +1,6 @@
 class ScientistsController < ApplicationController
 
+
 def index
  @scientists = Scientist.all
 end
@@ -23,7 +24,10 @@ def edit
 end
 
 def update
+ @scientist = Scientist.find(params[:id])
+ @scientist.update(scientist_params)
 
+ redirect_to scientist_path(@scientist)
 end
 
 def destroy
@@ -38,6 +42,11 @@ end
 
 
 private
+
+def find_scientist
+@scientist = Scientist.find(params[:id])
+end
+
 
 def scientist_params
 params.require(:scientist).permit(:name, :field_of_study)

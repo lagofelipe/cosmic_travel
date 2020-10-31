@@ -1,0 +1,12 @@
+<h1>Create a new mission form</h1>
+
+<%=form_for(@mission) do |f|%>
+<%=f.label :mission_name%>
+<%=f.text_field :name%>
+
+<%=f.label :planet%>
+<%=f.collection_select :planet_id, Planet.all,:id, :name %>
+<%=f.label :scientist%>
+<%=f.collection_select :scientist_id, Scientist.all,:id, :name %>
+<%=f.submit%>
+<%end%>
